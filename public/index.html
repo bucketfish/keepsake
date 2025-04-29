@@ -7,7 +7,8 @@
   </head>
   <body>
     <div class="area-1">
-      <h1>keepsake</h1>
+      <canvas id="title-3d" data-engine="three.js r158"></canvas>
+      <!-- <canvas id="juicebox" width="1200" height="1200" data-engine="three.js r158" style="width: 600px; height: 600px;"></canvas> -->
       <p>a social website crafting event!</p>
 
       <p>make a website. get free ice cream. hang out with your friends.</p>
@@ -19,6 +20,15 @@
     <div id="cursor-beads-wrapper">
     </div>
 
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="/js/title.js"></script>
     <script type="text/javascript" src="/js/cursor.js"></script>
   </body>
 </html>

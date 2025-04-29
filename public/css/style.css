@@ -1,4 +1,3 @@
-
 html, body {
   margin: 0;
   padding: 0;
@@ -9,6 +8,19 @@ body {
 }
 .area-1 {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+#title-3d {
+  background: transparent !important;
+  width: 100%;
+  /* max-width: 600px; */
+  height: auto;
+
 }
 
 .cursor-bead {

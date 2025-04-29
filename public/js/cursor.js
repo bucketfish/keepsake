@@ -46,7 +46,7 @@ const handleOnMove = e => {
     last.x = e.clientX;
     last.y = e.clientY;
   }
-  console.log(images.length)
+  
   if (images.length > 5) {
 
     images[0].remove();
