@@ -40,13 +40,15 @@ const angleFromLast = (last, current) => {
 
 const handleOnMove = e => {
 
-  if (distanceFromLast(e.clientX, e.clientY) > (window.innerWidth / 30)) {
-    newBead(e.clientX, e.clientY, angleFromLast(last, {x: e.clientX, y: e.clientY}));
+  var position = { x: e.clientX + window.pageXOffset, y: e.clientY + window.pageYOffset}
+  if (distanceFromLast(position.x, position.y) > (40)) {
 
-    last.x = e.clientX;
-    last.y = e.clientY;
+    newBead(position.x, position.y, angleFromLast(last, position));
+
+    last.x = position.x;
+    last.y = position.y;
   }
-  
+
   if (images.length > 5) {
 
     images[0].remove();

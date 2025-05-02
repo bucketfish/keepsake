@@ -9,6 +9,8 @@ body {
   background-color: #FCECF4;
   overflow-x: hidden;
   font-family: Quicksand, sans-serif;
+
+  padding-bottom: 30px;
 }
 .area-1 {
   width: 100%;
@@ -33,6 +35,7 @@ body {
   transform-origin: center;
 
   height: 50px;
+  z-index: -1;
 }
 
 

@@ -1,11 +1,26 @@
 import express from 'express';
 import Airtable from 'airtable';
+import 'dotenv/config';
 
 // const express = require('express')
 const app = express()
 const port = 3000
 
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+
+const base = new Airtable({
+  apiKey: process.env.AIRTABLE_API_KEY
+}).base(process.env.AIRTABLE_BASE_ID);
+
+
+app.use(express.json())
+app.use(express.urlencoded({
+  extended: true
+}));
+
 app.use(express.static('public'))
+
 
 
 app.get('/', (req, res) => {
@@ -19,18 +34,36 @@ app.listen(port, () => {
 
 
 app.post('/signup', (req, res) => {
-  const { email, name } = req.body;
+  console.log(req.body);
+  const { email, firstname, lastname, dob, school } = req.body;
 
   base('Signups').create({
-    Email: email,
-    Name: name
-  }, (err, record) => {
+    "Email": email,
+    "First name": firstname,
+    "Last name": lastname,
+    "Date of Birth": dob,
+    "School": school
+
+  }, function(err, record) {
     if (err) {
       console.error(err);
       return res.status(500).send('Error saving to Airtable');
     }
-    res.send('Signup successful!');
-  });
+  console.log(record.getId());
+  res.sendFile(path.join(__dirname, '/signup_successful.html'));
+
+});
+
+  // base('Signups').create({
+  //   Email: email,
+  //   F: name
+  // }, (err, record) => {
+  //   if (err) {
+  //     console.error(err);
+  //     return res.status(500).send('Error saving to Airtable');
+  //   }
+  //   res.send('Signup successful!');
+  // });
 })
 // import express from 'express';
 // // import dotenv from 'dotenv';
