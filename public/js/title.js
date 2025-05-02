@@ -23,8 +23,13 @@ camera.position.setY(4);
 camera.position.setX(0.3);
 camera.rotation.x = -0.2;
 
+
+var window_width = window.innerWidth;
+var width_percent = 1.0;
+console.log(window_width);
+
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(1500, 450);
+renderer.setSize(window_width * width_percent, window_width * width_percent * 0.3);
 
 // Also update the camera aspect ratio to match
 camera.aspect = 1000 / 300;
@@ -171,6 +176,18 @@ function animate() {
 renderer.setAnimationLoop(animate);
 
 function onWindowResize() {
+
+
+  var window_width = window.innerWidth;
+  var width_percent = 1.0;
+  console.log(window_width);
+
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window_width * width_percent, window_width * width_percent * 0.3);
+
+  // Also update the camera aspect ratio to match
+  camera.aspect = 1000 / 300;
+  camera.updateProjectionMatrix();
   // renderer.setSize(title_canvas.width, title_canvas.height);
 }
 
