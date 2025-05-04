@@ -71,30 +71,46 @@
       <div class="form content">
         <form class="" action="/signup" method="POST">
           <p>email*</p>
-          <input type="text" name="email" placeholder="orpheus@hackclub.com">
+          <input type="email" name="email" placeholder="orpheus@hackclub.com" required>
 
           <div class="" style="display: flex; justify-content: space-between; gap: 25px;">
             <div class="" style="width:100%">
               <p>first name*</p>
-              <input type="text" name="firstname" placeholder="orpheus">
+              <input type="text" name="firstname" placeholder="orpheus" required>
             </div>
             <div class="" style="width:100%">
               <p>last name*</p>
-              <input type="text" name="lastname" placeholder="hackclubber">
+              <input type="text" name="lastname" placeholder="hackclubber" required>
             </div>
 
           </div>
 
 
           <p>date of birth*</p>
-          <input type="text" name="dob" placeholder="1 january 2025">
+          <input type="date" name="dob" placeholder="1 january 2025" required>
           <p>school*</p>
-          <input type="text" name="school" placeholder="the cool school">
+          <input type="text" name="school" placeholder="the cool school" required>
           <p>how did you find keepsake?</p>
           <input type="text" name="source" placeholder="instagram / slack / XX told me...">
-          <div class="" style="display: flex; justify-content: center;">
-            <input type="submit" name="" value="sign up! ➡️">
-          </div>
+
+          <% if (errorMessage) { %>
+            <div class="popup error"><%= errorMessage %></div>
+
+          <% } %>
+
+          <% if (success) { %>
+
+          <div class="popup success">you're in, welcome! check your email for more information :)</div>
+
+          <% } else { %>
+            <div class="" style="display: flex; justify-content: center;">
+              <input type="submit" name="" value="sign up! ➡️">
+            </div>
+          <% } %>
+
+
+
+
 
         </form>
 
@@ -116,8 +132,13 @@
     </div>
 
     <footer>
-      <p>Keepsake is [a part of Hack Club, etc]</p>
+      <p>made with ❤️ by teenagers, for teenagers at hack club</p>
+      <p><a href="https://hackclub.com" target="_blank">hack club</a> · <a href="https://hackclub.com/slack" target="_blank">slack</a> · <a href="https://www.youtube.com/HackClubHQ" target="_blank">youtube</a></p>
     </footer>
+
+    <div class="confetti-wrapper">
+
+    </div>
 
 
 
@@ -132,5 +153,37 @@
     </script>
     <script type="module" src="/js/title.js"></script>
     <script type="text/javascript" src="/js/cursor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const errorPopup = document.querySelector('.popup.error');
+        const successful = document.querySelector('.popup.success');
+
+        if (errorPopup) {
+          errorPopup.scrollIntoView({ behavior: 'smooth' });
+        }
+
+
+        if (successful) {
+          successful.scrollIntoView({ behavior: 'smooth' });
+
+          confetti({
+            particleCount: 80,
+            angle: 60,
+            spread: 80,
+            origin: { x: 0, y: 0.9 },
+          });
+          confetti({
+            particleCount: 80,
+            angle: 120,
+            spread: 80,
+            origin: { x: 1, y: 0.9 },
+          });
+
+        }
+      });
+    </script>
+
   </body>
 </html>

@@ -4,6 +4,7 @@
   --green: #BCD093;
   --tgreen: #BCD093DD;
   --twhite: #ffffff99;
+  --twhite2: #ffffffDD;
 }
 html, body {
   margin: 0;
@@ -16,7 +17,7 @@ body {
   overflow-x: hidden;
   font-family: Quicksand, sans-serif;
 
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 .area.one {
@@ -48,6 +49,16 @@ body {
 
 p {
   font-size: 1.2em;
+}
+
+a {
+  color: var(--dpink);
+  /* background-color: white; */
+}
+
+a:hover {
+  /* background-color: var(--twhite); */
+  text-decoration-style: wavy;
 }
 
 
@@ -111,7 +122,6 @@ p {
 
   background-color: var(--tgreen);
 
-  /* background-color: #ffffff88; */
 }
 
 .area.form .info {
@@ -150,7 +160,7 @@ p {
 
 }
 
-.area.form form input[type="text"] {
+.area.form form input[type="text"], .area.form form input[type="date"], .area.form form input[type="email"]{
   width: 100%;
   border: none;
   background-color: transparent;
@@ -177,12 +187,8 @@ p {
   cursor: pointer;
 }
 
-.area.form form input[type="text"]:focus {
+.area.form form input[type="text"]:focus, .area.form form input[type="date"]:focus, .area.form form input[type="email"] {
   outline: none;
-  /* outline: 4px solid var(--dpink); */
-  /* border-color: inherit; */
-  /* border: none; */
-  /* border: 4px solid white; */
   border-bottom: 4px dashed var(--lpink);
 }
 
@@ -198,10 +204,33 @@ p {
 
 }
 
+.popup.error {
+  border: 4px solid var(--dpink);
+  background-color: var(--dpink);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.popup.success {
+  border: 4px solid var(--twhite);
+  background-color: var(--twhite);
+  /* color: white; */
+  padding: 10px 25px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
 
 
 footer {
   margin: 0 auto;
   text-align: center;
   padding: 32px 10px;
+  background-color: var(--twhite2);
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 12px 0;
 }

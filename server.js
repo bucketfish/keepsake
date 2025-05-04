@@ -2,11 +2,8 @@ import express from 'express';
 import Airtable from 'airtable';
 import 'dotenv/config';
 
-// const express = require('express')
 const app = express()
-const port = 3000
-
-// var urlencodedParser = bodyParser.urlencoded({ extended: false })
+const port = process.env.PORT
 
 
 const base = new Airtable({
@@ -19,12 +16,16 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-app.use(express.static('public'))
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/index.html'));
+  res.render('index', {
+    errorMessage: null,
+    success: false
+  });
 
 })
 
@@ -47,10 +48,19 @@ app.post('/signup', (req, res) => {
   }, function(err, record) {
     if (err) {
       console.error(err);
-      return res.status(500).send('Error saving to Airtable');
+      return res.render('index', {
+        errorMessage: "something went wrong. please try again or email keepsake@hackclub.com if the error persists!",
+        success: false
+      })
+      // return res.status(500).send('Error saving to Airtable');
     }
   console.log(record.getId());
-  res.sendFile(path.join(__dirname, '/signup_successful.html'));
+
+  return res.render('index', {
+    errorMessage: null,
+    success: true
+  })
+  // res.sendFile(path.join(__dirname, '/signup_successful.html'));
 
 });
 
