@@ -45,7 +45,6 @@ app.post('/signup', (req, res) => {
     "Date of Birth": dob,
     "School": school,
     "Source": source
-
   }, function(err, record) {
     if (err) {
       console.error(err);
