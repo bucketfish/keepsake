@@ -4,7 +4,7 @@
   --green: #BCD093;
   --tgreen: #BCD093DD;
   --twhite: #ffffff99;
-  --twhite2: #ffffffDD;
+  --twhite2: #ffffffCC;
 }
 html, body {
   margin: 0;
@@ -17,7 +17,47 @@ body {
   overflow-x: hidden;
   font-family: Quicksand, sans-serif;
 
+
+  box-sizing: border-box;
+  z-index: -100;
+  height: 100%;
+  width: 100%;
+  /* background-image: url(/assets/background/bg0.png), url(/assets/background/bg1.png), url(/assets/background/bg2.png), url(/assets/background/bg3.png); */
+
+  background-position:
+    -5% -280px,
+    120% 80px,
+    -10% 350px,
+    95% 580px;
+  background-repeat: no-repeat;
+  opacity: 100%;
+  background-size: 50vw;
+
+
   /* padding-bottom: 30px; */
+}
+
+/*
+.background {
+  box-sizing: border-box;
+  z-index: -100;
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/background/bg0.png), url(/assets/background/bg1.png), url(/assets/background/bg2.png), url(/assets/background/bg3.png);
+
+  background-position:
+    5% -5%,
+    105% 20%,
+    -5% 80%,
+    95% 120%;
+  background-repeat: no-repeat;
+  opacity: 100%;
+  background-size: 40vw;
+  position: absolute;
+} */
+
+.area {
+  /* z-index: 5; */
 }
 
 .area.one {
@@ -49,6 +89,23 @@ body {
 }
 
 
+#background-wrapper {
+  position: absolute;
+  opacity: 30%;
+  width: 100%;
+  height: 100dvh;
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+#background-wrapper img {
+  position: absolute;
+  width: 400px;
+  transform-origin: center;
+
+  z-index: -1 !important;
+}
+
 p {
   font-size: 1.2em;
 }
@@ -64,6 +121,11 @@ a:hover {
 }
 
 
+img.deco {
+  position: absolute;
+  z-index: 5;
+}
+
 .area.two {
   width: 80%;
   margin: 0 auto;
@@ -75,7 +137,7 @@ a:hover {
 
 .area.two .card {
   position: relative;
-  background-color: var(--twhite);
+  background-color: var(--twhite2);
   padding: 25px 20px;
   border-radius: 25px;
   border: 4px dashed white;
@@ -118,7 +180,7 @@ a:hover {
   margin: 0 auto;
   margin-top: 48px;
 
-  /* border: 4px solid #E9D1D6; */
+  border: 4px dashed var(--green);
   border-radius: 25px;
   padding: 25px 25px;
   box-sizing: border-box;
@@ -145,6 +207,7 @@ a:hover {
 
 
 .area.form .content {
+  position: relative;
   display: flex;
   gap: 48px;
 }

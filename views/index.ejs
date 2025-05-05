@@ -28,34 +28,52 @@
     <meta name="theme-color" content="#FCECF4">
   </head>
   <body>
+
+    <div class="background">
+
+    </div>
+
+
+    <!-- <div id="background-wrapper">
+      <img src="/assets/background/background0.png" alt="" style="left: 10%; top: -50px; transform: rotate(-8deg);">
+      <img src="/assets/background/background1.png" alt="" style="right: -2%; top: 150px; transform: rotate(10deg)">
+      <img src="/assets/background/background2.png" alt="" style="left: -5%; top: 480px; transform: rotate(17deg); width: 600px">
+      <img src="/assets/background/background3.png" alt="" style="right: 8%; top: 550px; transform: rotate(-8deg); width: 600px">
+    </div> -->
+
     <div id="cursor-beads-wrapper">
     </div>
 
     <div class="area one">
       <canvas id="title-3d" data-engine="three.js r158"></canvas>
-      <!-- <canvas id="juicebox" width="1200" height="1200" data-engine="three.js r158" style="width: 600px; height: 600px;"></canvas> -->
       <p>a social website crafting event · June 10 · Singapore</p>
 
       <p>make a website. get free ice cream. hang out with your friends.</p>
-
-
     </div>
 
     <div class="area two">
       <div class="card">
         <img src="/assets/beads/bead13.png" alt="">
         <h2>make a website 🌙</h2>
+        <img src="/assets/deco/green washi.png" class="deco" alt="" style="width: 150px; top: -5%; right: -30px; transform: rotate(28deg)">
         <p>build something fun and cozy with our tutorial workshop! perfect for beginners.</p>
+        <img src="/assets/beads/bead21.png" class="deco" alt="" style="width: 80px; top: 43%; left: -25px; transform: rotate(20deg)">
+
       </div>
       <div class="card">
         <img src="/assets/beads/bead0.png" alt="">
         <h2>get ice cream 🍨</h2>
-        <p>ship your website during the event to redeem ice cream — for free!</p>
+        <img src="/assets/beads/bead16.png" class="deco" alt="" style="width: 80px; top: 25%; left: -55px; transform: rotate(-19deg)">
+        <p>publish your website during the event to redeem ice cream — for free!</p>
+        <img src="/assets/beads/bead3.png" class="deco" alt="" style="width: 70px; top: 40%; right: -35px; transform: rotate(19deg)">
+
       </div>
       <div class="card">
         <img src="/assets/beads/bead20.png" alt="">
         <h2>bring your friends 🎐</h2>
+        <img src="/assets/beads/bead2.png" class="deco" alt="" style="width: 80px; top: -15%; left: 55px; transform: rotate(-8deg)">
         <p>hang out with your friends and make new friends who love to create things :)</p>
+        <img src="/assets/deco/pink washi.png" class="deco" alt="" style="width: 150px; bottom: -30px; right: -40px; transform: rotate(-28deg)">
       </div>
 
     </div>
@@ -69,25 +87,31 @@
 
 
       <div class="form content">
+        <img src="/assets/beads/bead22.png" class="deco" alt="" style="width: 100px; top: -80px; left: -80px; transform: rotate(-28deg)">
+
         <form class="" action="/signup" method="POST">
           <p>email*</p>
           <input type="email" name="email" placeholder="orpheus@hackclub.com" required>
 
+
+          <p>full name*</p>
+          <input type="text" name="fullname" placeholder="orpheus hackclubber the first" required>
+
+
           <div class="" style="display: flex; justify-content: space-between; gap: 25px;">
             <div class="" style="width:100%">
-              <p>first name*</p>
-              <input type="text" name="firstname" placeholder="orpheus" required>
+              <p>we should call you...*</p>
+              <input type="text" name="preferredname" placeholder="orpheus" required>
             </div>
             <div class="" style="width:100%">
-              <p>last name*</p>
-              <input type="text" name="lastname" placeholder="hackclubber" required>
+              <p>date of birth*</p>
+              <input type="date" name="dob" placeholder="1 january 2025" required>
             </div>
 
           </div>
 
 
-          <p>date of birth*</p>
-          <input type="date" name="dob" placeholder="1 january 2025" required>
+
           <p>school*</p>
           <input type="text" name="school" placeholder="the cool school" required>
           <p>how did you find keepsake?</p>
