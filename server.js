@@ -36,14 +36,15 @@ app.listen(port, () => {
 
 app.post('/signup', (req, res) => {
   console.log(req.body);
-  const { email, firstname, lastname, dob, school } = req.body;
+  const { email, firstname, lastname, dob, school, source } = req.body;
 
   base('Signups').create({
     "Email": email,
     "First name": firstname,
     "Last name": lastname,
     "Date of Birth": dob,
-    "School": school
+    "School": school,
+    "Source": source
 
   }, function(err, record) {
     if (err) {
