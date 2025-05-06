@@ -130,6 +130,10 @@
 
           <div class="popup success">you're in, welcome! check your email for more information :)</div>
 
+          <div class="" style="display: flex; justify-content: center;">
+            <input type="submit" name="" value="sign up again... for your friend? :)">
+          </div>
+
           <% } else { %>
             <div class="" style="display: flex; justify-content: center;">
               <input type="submit" name="" value="sign up! ➡️">
@@ -213,16 +217,17 @@
 
     <script>
       window.addEventListener('DOMContentLoaded', () => {
+        const signup_area = document.getElementById('signup')
         const errorPopup = document.querySelector('.popup.error');
         const successful = document.querySelector('.popup.success');
 
         if (errorPopup) {
-          errorPopup.scrollIntoView({ behavior: 'smooth' });
+          signup_area.scrollIntoView({ behavior: 'smooth' });
         }
 
 
         if (successful) {
-          successful.scrollIntoView({ behavior: 'smooth' });
+          signup_area.scrollIntoView({ behavior: 'smooth' });
 
           confetti({
             particleCount: 80,
