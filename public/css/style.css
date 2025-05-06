@@ -299,6 +299,12 @@ img.deco {
   background-color: transparent;
   border-bottom: 4px solid white;
   margin-bottom: 24px;
+  padding-left: 0;
+  color: black;
+}
+
+input[type="text"]::placeholder, input[type="date"]::placeholder, input[type="email"]::placeholder {
+  color: #00000066;
 }
 
 .area.form form input[type="submit"] {
@@ -407,6 +413,12 @@ footer p {
 }
 
 
+.make-col {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
 
 @media(max-width: 600px) {
   body {
@@ -445,5 +457,10 @@ footer p {
     width: 95%;
     margin: 0 auto;
     margin-top: 48px;
+  }
+
+  .make-col {
+    flex-flow: column;
+    gap: 0;
   }
 }
