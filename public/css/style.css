@@ -31,16 +31,19 @@ body {
   z-index: -100;
   height: 100%;
   width: 100%;
+  background-image: url(/assets/background.png);
   /* background-image: url(/assets/background/bg0.png), url(/assets/background/bg1.png), url(/assets/background/bg2.png), url(/assets/background/bg3.png); */
 
-  background-position:
+  background-position:top;
+  /* background-position:
     -5% -280px,
     120% 80px,
     -10% 350px,
-    95% 580px;
+    95% 580px; */
   background-repeat: no-repeat;
   opacity: 100%;
-  background-size: 50vw;
+  /* background-size: 50vw; */
+  background-size: cover;
 
   font-size: 1.2em;
 
@@ -406,6 +409,9 @@ footer p {
 
 
 @media(max-width: 600px) {
+  body {
+    background-image: url(/assets/background_mobile.png)
+  }
   .area.two {
     flex-flow: column;
   }
