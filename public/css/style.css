@@ -371,6 +371,20 @@ input[type="text"]::placeholder, input[type="date"]::placeholder, input[type="em
   margin-bottom: 24px;
 }
 
+.area.prizes {
+  width: 100%;
+
+}
+
+.area.prizes h2 {
+  padding: 30px 30px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.area.prizes img {
+  width: 100%;
+}
 
 .area.faq {
   /* width: 80%;
